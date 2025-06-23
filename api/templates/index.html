@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VI Recharge Recommendation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff0f0;
+            color: #333;
+            padding: 40px;
+        }
+
+        h2 {
+            background-color: #e60000;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        form {
+            background-color: #ffe6e6;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(230, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #e60000;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #e60000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+
+        h3 {
+            margin-top: 30px;
+            color: #006600;
+            background-color: #e0ffe0;
+            padding: 10px;
+            border-left: 6px solid #009900;
+        }
+
+        strong {
+            color: #000;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>🔋 Vodafone Idea Recharge Plan Recommendation</h2>
+
+    <form method="POST">
+        <label>Data Usage (GB):</label>
+        <input type="number" step="0.01" name="data_usage_GB" required>
+
+        <label>Call Minutes:</label>
+        <input type="number" name="call_minutes" required>
+
+        <label>SMS Count:</label>
+        <input type="number" name="sms_count" required>
+
+        <label>Average Recharge (₹):</label>
+        <input type="number" step="0.01" name="avg_recharge" required>
+
+        <label>Recharge Time:</label>
+        <select name="recharge_time">
+            <option>morning</option>
+            <option>afternoon</option>
+            <option>evening</option>
+        </select>
+
+        <label>City:</label>
+        <select name="city">
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Hyderabad</option>
+        </select>
+
+        <label>User Type:</label>
+        <select name="user_type">
+            <option>prepaid</option>
+            <option>postpaid</option>
+        </select>
+
+        <input type="submit" value="🔮 Predict Plan">
+    </form>
+
+    {% if prediction is not none %}
+        <h3>✅ Predicted Plan: <strong>{{ prediction }}</strong></h3>
+    {% endif %}
+
+    <footer>
+        <h1>Created by Shashi Chintalapalli</h1>
+    </footer>
+</body>
+</html>
